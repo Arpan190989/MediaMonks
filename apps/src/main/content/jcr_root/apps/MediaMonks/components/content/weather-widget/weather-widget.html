@@ -1,0 +1,21 @@
+<div id="temperature">
+<script>
+$.ajax({
+    method: "GET",
+    url: "/content/media-monks/jcr:content/servlets/weathergetter.weather.json",
+    data:{ city:"${properties.defaultCity @ context='scriptString'}"
+    },
+     success: function(data) {
+
+    var out = '<table>';
+
+    $.each(data, function(key, val) {
+        out += '<tr><td>'+ val.CITY + "," + val.COUNTRY + '</td><td>'+ "Temperature:" + val.TEMPERATURE + "(" +"MIN:" +val.MIN_TEMP + "-" + "MAX:" + val.MAX_TEMP +")" + '</td></tr>' ;  
+		
+    });
+		out += '</table>';
+		document.getElementById("temperature").innerHTML=out;
+    }
+	 
+	});
+</script>
