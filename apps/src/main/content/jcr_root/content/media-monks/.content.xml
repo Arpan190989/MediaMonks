@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:allowedTemplates="[/conf/MediaMonks/settings/wcm/templates/.*]"
+        cq:cloudserviceconfigs="[]"
+        cq:conf="/conf/MediaMonks"
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2016-02-09T00:05:48.520+01:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2019-01-21T14:34:38.162-05:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:redirectTarget="/content/media-monks/www/us/en_us"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:language="en_US"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Media Monks"
+        jcr:uuid="8a349dff-dbf9-47e4-aca7-946f7a462ee1"
+        sling:resourceType="MediaMonks/components/structure/page">
+        <servlets/>
+    </jcr:content>
+    <www/>
+</jcr:root>
