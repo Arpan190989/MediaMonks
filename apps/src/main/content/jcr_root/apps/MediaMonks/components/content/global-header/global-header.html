@@ -1,9 +1,0 @@
-<sly data-sly-use.hfd="${'com.aem.core.mediamonks.core.use.HeaderUse' @ path=properties.headerFlyoutPath, minLineItems=properties.minLineItems , maxLineItems=properties.maxLineItems, maxColumnsOnAdditionalOption= properties.maxColumnsOnAdditionalOption, minColumnsOnAdditionalOption = properties.minColumnsOnAdditionalOption}"/>
-<div class="header">
-  <a href="${properties.logoLink}" class="logo">${properties.logoText}</a>
-	<div class="header-right">
-	<sly data-sly-list.child="${hfd.multiFieldItems}">
-				<a href="${child.navigationLink}">${child.navigationText}</a>
-			</sly>   
-	</div>
-</div>

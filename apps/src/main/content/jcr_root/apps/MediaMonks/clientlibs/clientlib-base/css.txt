@@ -1,1 +1,0 @@
-/apps/MediaMonks/clientlibs/clientlib-base/header.css
