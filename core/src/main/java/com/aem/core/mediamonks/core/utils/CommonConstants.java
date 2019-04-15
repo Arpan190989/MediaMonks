@@ -23,7 +23,7 @@ public final class CommonConstants {
     /**
      * The constant WRITE_SERVICE.
      */
-    public static final String WRITE_SERVICE = "writeService";
+    public static final String WRITE_SERVICE = "mediamonks";
     
     /**
      * Content type JSON.

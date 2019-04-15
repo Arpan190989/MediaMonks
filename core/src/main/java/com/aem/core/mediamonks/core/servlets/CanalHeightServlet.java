@@ -49,11 +49,6 @@ public class CanalHeightServlet extends SlingAllMethodsServlet {
 		response.setHeader("cache-control", "no-cache");
 		PrintWriter out = response.getWriter();
 		out.println(data);
-
-		LOGGER.info(
-				"Response from getMountingGroupDetailService Service is {}",
-				data);
-		LOGGER.info("Ending Method ByoMountingServlet Do GET Method");
 	}
 
 }

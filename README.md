@@ -1,16 +1,15 @@
-# Sample AEM project template
+# Media Monks Assignment
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+This is a project template designed to demonstrate Media Monks assignment.
 
 ## Modules
 
 The main parts of the template are:
 
-* core: Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
-* ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, templates, runmode specific configs as well as Hobbes-tests
-* ui.content: contains sample content using the components from the ui.apps
-* ui.tests: Java bundle containing JUnit tests that are executed server-side. This bundle is not to be deployed onto production.
-* ui.launcher: contains glue code that deploys the ui.tests bundle (and dependent bundles) to the server and triggers the remote JUnit execution
+* core: Java bundle containing all core functionality like OSGi services, Bean, Service,Servlets as well as component-related Java code.
+* apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, templates, runmode specific configs if required
+* content: contains sample content using the components from the apps
+* tests: Java bundle containing JUnit tests that are executed server-side. 
 
 ## How to build
 
@@ -22,37 +21,39 @@ If you have a running AEM instance you can build and package the whole project a
 
     mvn clean install -PautoInstallPackage
     
-Or to deploy it to a publish instance, run
+	
+## Require Step
 
-    mvn clean install -PautoInstallPackagePublish
-    
-Or alternatively
+Go to helper folder present under cloned repository
+Install mediamonks_ServiceUser.zip
+Once installed go to the useradmin i.e localhost:4801/useradmin and login with admin credentials.
+Search for mediamonks user.
+Give admin rights to mediamonk user.	
 
-    mvn clean install -PautoInstallPackage -Daem.port=4503
+## Description
 
-Or to deploy only the bundle to the author, run
+#Template-Types
+1.Media Monk Language Page - Use this template to create language pages . For example en_us, de_de. In the page properties of language pages, path of the global-header data page should be authored in order to see header on all 	pages. This template have a baked in parsys which can be used by author to add more components.
+2. Media Monk Empty Page - Use this template to create empty pages. These pages can be used as helper folder for example /content/media-monks and /content/media-monks/www. Note:- Redirect functionality can be authored on these pages.
+3. Media Monk Content Page - This is similar to Language page, the only difference being that the page properties of this page doesn't have an option to select path of global-header component.
 
-    mvn clean install -PautoInstallBundle
+#Content Description
 
-## Testing
+1. en_us.html - This page is designed from Language Page template. The page properties of this page have a customized tab Global authoring where the path of header page is authored.
+2. global-header.html - A Global header component is dragged on this page and authored. All the pages will refer this data page to get hold of header component.
+3. Weather.html - This is the main page , where Header component, Image component and Weather-Widget component can be accessed. At the end of parsys a Weather-Widget component is dropped at the end, demonstrating temperature of Amsterdam.
 
-There are three levels of testing contained in the project:
+#Servlet Description
+1. Weather Servlet - A GET servlet weather servlet is created which will pass on the city name as the request param and will fetch the weather details. 
+			For example: - http://localhost:4801/content/media-monks/jcr:content/servlets/weathergetter.weather.json?city=Amsterdam and http://localhost:4801/content/media-monks/jcr:content/servlets/weathergetter.weather.json?city=  if not city is selected Amsterdam would be considered as default city.
+			
 
-* unit test in core: this show-cases classic unit testing of the code contained in the bundle. To test, execute:
-
-    mvn clean test
-
-* server-side integration tests: this allows to run unit-like tests in the AEM-environment, ie on the AEM server. To test, execute:
-
-    mvn clean verify -PintegrationTests
-
-* client-side Hobbes.js tests: JavaScript-based browser-side tests that verify browser-side behavior. To test:
-
-    in the browser, open the page in 'Developer mode', open the left panel and switch to the 'Tests' tab and find the generated 'MyName Tests' and run them.
+Service Description
+1. Canal Height Service - A canal height service is created which will fetch the list of last 20 entries of Canal Height. The entries of canal and respective reading date are authored in a canal data page present at /en_us/canal-height. On this page a component Canal is dragged and dropped. And entries of height and date are done.
+			Usage - Passing a integer as a parameter to the calling serlvet will return data having height above the sent height.
+			For example - 
+			
+					 
 
 
-## Maven settings
-
-The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
-
-    http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
+ 

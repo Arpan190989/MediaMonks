@@ -194,9 +194,9 @@ public class CanalHeightServiceImpl implements CanalHeightService {
 		JSONArray jsonArray = new JSONArray();
 		for (CanalDataBean dataBean : list) {
 			JSONObject canalBean = new JSONObject();
-			canalBean.put(CommonConstants.WATER_HEIGHT,
+			canalBean.put(CommonConstants.WATER_HEIGHT,""+
 					dataBean.getWaterHeight());
-			canalBean.put(CommonConstants.READING_DATE, dataBean
+			canalBean.put(CommonConstants.READING_DATE,""+dataBean
 					.getReadingDate().getTime());
 			jsonArray.add(canalBean);
 		}
